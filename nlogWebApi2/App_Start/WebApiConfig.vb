@@ -2,10 +2,12 @@
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Web.Http
+Imports System.Web.Http.ExceptionHandling
 
 Public Module WebApiConfig
     Public Sub Register(ByVal config As HttpConfiguration)
         ' Web API configuration and services
+        config.Services.Add(GetType(IExceptionLogger), New NlogExceptionLogger())
 
         ' Web API routes
         config.MapHttpAttributeRoutes()
