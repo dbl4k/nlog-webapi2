@@ -7,6 +7,7 @@ Public Class ValuesController
     ' GET api/values
     Public Function GetValues() As IEnumerable(Of String)
         Return New String() {"value1", "value2"}
+        Throw New InvalidOperationException("This is intentional")
     End Function
 
     ' GET api/values/5
